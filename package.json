@@ -16,5 +16,8 @@
     "new"
   ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.2"
+  }
 }

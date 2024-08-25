@@ -1,22 +1,31 @@
 class Maker {
     addBase(number) {
-        if(!number) {
+        if (!number) {
             throw new Error('must be a value');
-        }
-        if (typeof number !== 'number') {
+        } else if (typeof number !== 'number') {
             throw new Error('must be a number');
-        }
-        if(number > 61 || number < 0) {
+        } else if (number > 61 || number < 0) {
             throw new Error('number must be between 0 and 61');
         }
         return number;
     }
     addEyes(number) {
-        if (typeof number !== 'number') {
+        if (!number) {
+            throw new Error('must be a value');
+        } else if (typeof number !== 'number') {
             throw new Error('must be a number');
+        } else if (number > 63 || number < 0) {
+            throw new Error('number must be between 0 and 63');
         }
-        if(number > 63 || number < 0) {
-            throw new Error('number must be between 0 and 61');
+        return number;
+    }
+    addBrows(number) {
+        if (!number) {
+            throw new Error('must be a value');
+        } else if (typeof number !== 'number') {
+            throw new Error('must be a number');
+        } else if (number > 22 || number < 0) {
+            throw new Error('number must be between 0 and 2');
         }
         return number;
     }
