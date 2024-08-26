@@ -15,9 +15,10 @@
     "creation",
     "new"
   ],
-  "author": "",
+  "author": "ItsFranklinMyDudes",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.11.2"
+    "canvas": "^2.11.2",
+    "fs": "^0.0.1-security"
   }
 }
