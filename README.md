@@ -1,5 +1,7 @@
 # Emoji-Maker
 
+emoji-maker creates new emojis using base images
+
 ### Install emoji-maker with npm
 ```bash
   npm install emoji-maker@latest

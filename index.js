@@ -18,9 +18,10 @@ class ValidationError extends Error {
  * @returns {number} The validated input value.
  */
 function validateInput(inputValue, maxValue) {
-    if (!inputValue) {
-        throw new ValidationError('Value is required');
-    } else if (typeof inputValue !== 'number') {
+    // if (!inputValue) {
+    //     throw new ValidationError('Value is required');
+    // } else 
+    if (typeof inputValue !== 'number') {
         throw new ValidationError('Value must be a number');
     } else if (!Number.isInteger(inputValue)) {
         throw new ValidationError('Value must be an integer');
