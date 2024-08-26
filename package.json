@@ -15,6 +15,10 @@
     "creation",
     "new"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsFranklinMyDudes/Emoji-Maker.git"
+  },
   "author": "ItsFranklinMyDudes",
   "license": "ISC",
   "dependencies": {
