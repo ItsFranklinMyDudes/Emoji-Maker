@@ -47,31 +47,55 @@ class Maker {
         };
     }
 
+    /**
+     * 
+     * @requires .build() - in order for it to work
+     */
     addBase(number) {
         this.parts.bases = validateInput(number, 61);
         return this;
     }
 
+    /**
+     * 
+     * @requires .build() - in order for it to work
+     */
     addEyes(number) {
         this.parts.eyes = validateInput(number, 63);
         return this;
     }
 
+    /**
+     * 
+     * @requires .build() - in order for it to work
+     */
     addBrows(number) {
         this.parts.brows = validateInput(number, 22);
         return this;
     }
 
+    /**
+     * 
+     * @requires .build() - in order for it to work
+     */
     addMouths(number) {
         this.parts.mouths = validateInput(number, 70);
         return this;
     }
 
+    /**
+     * 
+     * @requires .build() - in order for it to work
+     */
     addExtras(number) {
         this.parts.extras = validateInput(number, 45);
         return this;
     }
 
+    /**
+     * 
+     * @returns an image of the emoji created from the selected
+     */
     async build() {
         const canvas = createCanvas(128, 128); // Adjust size if necessary
         const ctx = canvas.getContext('2d');

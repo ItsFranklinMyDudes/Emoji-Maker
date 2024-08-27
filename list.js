@@ -8,6 +8,10 @@ class List {
         // console.log(`Base path set to: ${this.basePath}`);
     }
 
+    /**
+     * 
+     * @returns every emojis ID in the file system
+     */
     async displayComponents() {
         const components = {};
         const categories = ['bases', 'eyes', 'brows', 'mouths', 'extras'];
@@ -29,6 +33,10 @@ class List {
         return components;
     }
 
+    /**
+     * 
+     * @returns an image with every emoji component and there ID
+     */
     async displayImage() {
         const components = await this.displayComponents();
         const canvasWidth = 1000; // Adjusted canvas width to fit more emojis in a row
