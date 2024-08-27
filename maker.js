@@ -2,7 +2,7 @@ const { createCanvas, loadImage } = require('canvas');
 const fs = require('fs');
 const path = require('path');
 
-class Error extends Error {
+class validateError extends Error {
     constructor(message) {
         super(message);
         this.name = 'ValidationError';
@@ -14,7 +14,7 @@ class Error extends Error {
  *
  * @param {number} inputValue - The input value to validate.
  * @param {number} maxValue - The maximum allowed value.
- * @throws {Error} If the input value is invalid.
+ * @throws {validateError} If the input value is invalid.
  * @returns {number} The validated input value.
  */
 function validateInput(inputValue, maxValue) {
@@ -22,13 +22,13 @@ function validateInput(inputValue, maxValue) {
     //     throw new ValidationError('Value is required');
     // } else 
     if (typeof inputValue !== 'number') {
-        throw new Error('Value must be a number');
+        throw new validateError('Value must be a number');
     } else if (!Number.isInteger(inputValue)) {
-        throw new Error('Value must be an integer');
+        throw new validateError('Value must be an integer');
     } else if (inputValue < 0 || inputValue > maxValue) {
-        throw new Error(`Value must be between 0 and ${maxValue}`);
+        throw new validateError(`Value must be between 0 and ${maxValue}`);
     } else if (typeof maxValue !== 'number' || !Number.isInteger(maxValue) || maxValue <= 0) {
-        throw new Error('Max value must be a positive integer');
+        throw new validateError('Max value must be a positive integer');
     }
     return inputValue;
 }

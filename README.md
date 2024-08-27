@@ -8,9 +8,9 @@ emoji-maker creates new emojis using base images
 ```
 
 ### Usage/Examples
-
+How to use Make Class
 ```javascript
-const Make = require('emoji-maker')
+const { Maker } = require('emoji-maker')
 
 const emoji = await new Maker()
     .addExtras(8) //maximum of different bases, 45
@@ -41,3 +41,15 @@ Output:
 this is the emoji of that combo
 <br>
 <img src="https://imgur.com/5cxaco1.png">
+
+How to use List Class
+```js
+const { List } = require('emoji-maker')
+const categoryImages = await new List().displayImage()
+console.log(categoryImages); 
+/*
+Output:
+bases
+*/ 
+console.log(categoryImages.mouths);
+```
