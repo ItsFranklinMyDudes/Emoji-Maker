@@ -6,7 +6,7 @@ class List {
     constructor(basePath = path.join(__dirname, './emojis')) {
         this.basePath = basePath;
         // console.log(`Base path set to: ${this.basePath}`);
-    }    
+    }
 
     async displayComponents() {
         const components = {};
@@ -51,10 +51,10 @@ class List {
             // Category title
             ctx.fillStyle = '#ffffff';
             ctx.font = '24px Arial';
-            ctx.lineWidth = 2
-            ctx.strokeStyle = '#ffffff'
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = '#ffffff';
             ctx.fillText(category.toUpperCase(), 10, 30);
-            ctx.strokeText(category.toUpperCase(), 10, 30)
+            ctx.strokeText(category.toUpperCase(), 10, 30);
     
             let xPos = 10;
             let yPos = 50;
@@ -69,13 +69,13 @@ class List {
     
                 // Draw number in the center
                 ctx.fillStyle = '#ffffff';
-                ctx.strokeStyle = '#ffffff'
+                ctx.strokeStyle = '#ffffff';
                 ctx.font = 'bold 20px Arial';
                 ctx.textAlign = 'center';
-                ctx.lineWidth = 2
+                ctx.lineWidth = 2;
                 ctx.textBaseline = 'middle'; // Ensure the text is centered vertically
-                ctx.fillText(file, xPos + itemSize / 2, yPos + itemSize / 2)
-                ctx.strokeText(file, xPos + itemSize / 2, yPos + itemSize / 2)
+                ctx.fillText(file, xPos + itemSize / 2, yPos + itemSize / 2);
+                ctx.strokeText(file, xPos + itemSize / 2, yPos + itemSize / 2);
     
                 xPos += itemSize + padding;
                 if (xPos + itemSize > canvasWidth) {
@@ -84,7 +84,11 @@ class List {
                 }
             }
     
-            categoryImages[category] = canvas.toBuffer('image/png');
+            // Store the buffer and URL for this category
+            categoryImages[category] = {
+                buffer: canvas.toBuffer('image/png'),
+                url: canvas.toDataURL('image/png')
+            };
         }
     
         return categoryImages;
