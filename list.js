@@ -29,7 +29,7 @@ class List {
         return components;
     }
 
-    async displayComponentsByCategory() {
+    async displayImage() {
         const components = await this.displayComponents();
         const canvasWidth = 1400; // Adjusted canvas width to fit more emojis in a row
         const itemSize = 90; // Size of each emoji
