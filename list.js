@@ -10,9 +10,9 @@ class List {
 
     /**
      * 
-     * @returns every emojis ID in the file system
+     * @returns every emojis ID in the file system (don't use)
      */
-    async displayComponents() {
+    async componentIDs() {
         const components = {};
         const categories = ['bases', 'eyes', 'brows', 'mouths', 'extras'];
 
@@ -38,7 +38,7 @@ class List {
      * @returns an image with every emoji component and there ID
      */
     async displayImage() {
-        const components = await this.displayComponents();
+        const components = await this.componentIDs();
         const canvasWidth = 1000; // Adjusted canvas width to fit more emojis in a row
         const itemSize = 100; // Size of each emoji
         const padding = 0; // Space between emojis
@@ -76,8 +76,8 @@ class List {
                 ctx.drawImage(image, xPos, yPos, itemSize, itemSize);
     
                 // Draw number on the emoji
-                ctx.fillStyle = '#000000';
-                ctx.strokeStyle = '#000000';
+                ctx.fillStyle = '#ffffff';
+                ctx.strokeStyle = '#ffffff';
                 ctx.font = 'bold 30px Arial';
                 ctx.textAlign = 'left';
                 ctx.lineWidth = 2;
