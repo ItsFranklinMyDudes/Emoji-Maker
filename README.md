@@ -4,7 +4,7 @@ emoji-maker creates new emojis using base images
 
 ### Install emoji-maker with npm
 ```bash
-  npm install emoji-maker@latest
+npm install emoji-maker@latest
 ```
 
 ### Usage/Examples
@@ -49,7 +49,39 @@ const categoryImages = await new List().displayImage()
 console.log(categoryImages); 
 /*
 Output:
-bases
-*/ 
+{
+    bases: {
+        buffer: <buffer bytes>
+        url: 'data:image/png;base64'
+    },
+    eyes: {
+        buffer: <buffer bytes>
+        url: 'data:image/png;base64'
+    },
+    brows: {
+        buffer: <buffer bytes>
+        url: 'data:image/png;base64'
+    },
+    mouths: {
+        buffer: <buffer bytes>
+        url: 'data:image/png;base64'
+    },
+    extras: {
+        buffer: <buffer bytes>
+        url: 'data:image/png;base64'
+    }
+}
+*/
+
 console.log(categoryImages.mouths);
+/*
+Output:
+mouths: {
+    buffer: <buffer bytes>
+    url: 'data:image/png;base64'
+}
+*/
 ```
+this is what the mouths image looks like
+<br>
+<img src="https://imgur.com/oTvBJWe.png">
