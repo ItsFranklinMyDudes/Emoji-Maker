@@ -31,16 +31,16 @@ class List {
 
     async displayImage() {
         const components = await this.displayComponents();
-        const canvasWidth = 1400; // Adjusted canvas width to fit more emojis in a row
-        const itemSize = 90; // Size of each emoji
-        const padding = 10; // Space between emojis
+        const canvasWidth = 1000; // Adjusted canvas width to fit more emojis in a row
+        const itemSize = 100; // Size of each emoji
+        const padding = 0; // Space between emojis
         const categoryImages = {};
     
         for (const [category, files] of Object.entries(components)) {
             // Sort the files array numerically
             files.sort((a, b) => a - b);
     
-            const canvasHeight = Math.ceil(files.length / 15) * (itemSize + padding) + 90;
+            const canvasHeight = Math.ceil(files.length / 10) * (itemSize + padding) + 100;
             const canvas = createCanvas(canvasWidth, canvasHeight);
             const ctx = canvas.getContext('2d');
     
@@ -50,13 +50,13 @@ class List {
     
             // Category title
             ctx.fillStyle = '#ffffff';
-            ctx.font = '24px Arial';
+            ctx.font = '40px Arial';
             ctx.lineWidth = 2;
             ctx.strokeStyle = '#ffffff';
             ctx.fillText(category.toUpperCase(), 10, 30);
             ctx.strokeText(category.toUpperCase(), 10, 30);
     
-            let xPos = 10;
+            let xPos = 0;
             let yPos = 50;
     
             for (let i = 0; i < files.length; i++) {
@@ -67,19 +67,19 @@ class List {
                 // Draw emoji image
                 ctx.drawImage(image, xPos, yPos, itemSize, itemSize);
     
-                // Draw number in the center
-                ctx.fillStyle = '#ffffff';
-                ctx.strokeStyle = '#ffffff';
-                ctx.font = 'bold 20px Arial';
-                ctx.textAlign = 'center';
+                // Draw number on the emoji
+                ctx.fillStyle = '#000000';
+                ctx.strokeStyle = '#000000';
+                ctx.font = 'bold 30px Arial';
+                ctx.textAlign = 'left';
                 ctx.lineWidth = 2;
-                ctx.textBaseline = 'middle'; // Ensure the text is centered vertically
+                ctx.textBaseline = 'bottom';
                 ctx.fillText(file, xPos + itemSize / 2, yPos + itemSize / 2);
                 ctx.strokeText(file, xPos + itemSize / 2, yPos + itemSize / 2);
     
                 xPos += itemSize + padding;
                 if (xPos + itemSize > canvasWidth) {
-                    xPos = 10;
+                    xPos = 0;
                     yPos += itemSize + padding;
                 }
             }
