@@ -8,7 +8,7 @@ npm install emoji-maker@latest
 ```
 
 ### Usage/Examples
-How to use Make Class
+How to use Maker Class
 ```javascript
 const { Maker } = require('emoji-maker')
 
