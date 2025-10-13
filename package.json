@@ -1,10 +1,14 @@
 {
   "name": "emoji-maker",
-  "version": "1.0.4",
-  "description": "",
+  "version": "2.0.0",
+  "description": "A customizable emoji generator that creates emojis by combining different facial features and accessories using Canvas API",
   "main": "index.js",
+  "types": "types/index.d.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "keywords": [
     "emoji",
@@ -13,7 +17,10 @@
     "canvas",
     "image",
     "creation",
-    "new"
+    "new",
+    "generator",
+    "face",
+    "avatar"
   ],
   "repository": {
     "type": "git",
@@ -22,7 +29,14 @@
   "author": "ItsFranklinMyDudes",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.11.2",
-    "fs": "^0.0.1-security"
-  }
+    "canvas": "^2.11.2"
+  },
+  "devDependencies": {},
+  "files": [
+    "index.js",
+    "maker.js",
+    "list.js",
+    "emojis/**/*",
+    "types/**/*"
+  ]
 }
